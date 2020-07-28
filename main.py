@@ -24,4 +24,4 @@ def report():
     report_title=report_movie+report_tv + report_spacing
     telegram_bot_sendtext(report_movie)
 
-schedule.every().day.at("22:48").do(report)
+schedule.every().day.at("22:52").do(report)
