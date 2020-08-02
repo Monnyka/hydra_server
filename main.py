@@ -2,6 +2,7 @@ import time
 import schedule
 import shutil
 import telebot
+import os
 
 bot = telebot.TeleBot('1107438786:AAED_PIcm4FYHNX_zCLJBGDktDVpAvf7g5Q')
 
@@ -19,14 +20,22 @@ bot = telebot.TeleBot('1107438786:AAED_PIcm4FYHNX_zCLJBGDktDVpAvf7g5Q')
 #     #report_title=report_movie+report_tv + report_spacing
 #     telegram_bot_sendtext(report_movie)
 
-def stop():
-        import os
-        os.system("sudo systemctl stop minecraftpeserver.service")
+def start_minecraft():
+    os.system("sudo systemctl start minecraftpeserver.service")
+    print("Successfully start minecraftpeserver")
 
-stop()
-# schedule.every().day.at("15:37").do(stop)
+def stop_minecraft():
+    os.system("sudo systemctl stop minecraftpeserver.service")
+    print("Successfully stop minecraftserver")
 
-# schedule.every().day.at("15:08").do(report)
-# while True:
-#     schedule.run_pending()
-# time.sleep(1)
+
+schedule.every().day.at("08:00").do(start_minecraft)
+schedule.every().day.at("22:05").do(stop_minecraft)
+schedule.every().day.at("13:00").do(start_minecraft)
+schedule.every().day.at("23:00").do(stop_minecraft)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+
