@@ -1,6 +1,5 @@
 import time
 import schedule
-import requests
 import shutil
 import telebot
 
@@ -24,7 +23,7 @@ def report():
     #report_title=report_movie+report_tv + report_spacing
     telegram_bot_sendtext(report_movie)
 
-schedule.every().day.at("12:38").do(report)
+schedule.every().day.at("12:49").do(report)
 while True:
     schedule.run_pending()
 time.sleep(1)
