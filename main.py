@@ -21,7 +21,10 @@ def report():
     report_movie="*Report for Hydra Server:* \n\n ~~_MEDIA:_~~\n -New Added Movie:\n     *American Sniper (2020)*\n"
     #report_tv="-New Added Movie:\n     *Arrow S08E01*\n\n"
     #report_spacing="~~_DISK USAGE_~~\n -Total: \n      *{}*\n -Use: \n      *{}* \n-Free: \n      *{}\n*".format(report_disk_total, report_disk_used,report_disk_free)
-    report_title=report_movie+report_tv + report_spacing
+    #report_title=report_movie+report_tv + report_spacing
     telegram_bot_sendtext(report_movie)
 
-schedule.every().day.at("22:57").do(report)
+schedule.every().day.at("12:05").do(report)
+while True:
+    schedule.run_pending()
+time.sleep(1)
