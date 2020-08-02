@@ -22,9 +22,11 @@ bot = telebot.TeleBot('1107438786:AAED_PIcm4FYHNX_zCLJBGDktDVpAvf7g5Q')
 def stop():
         import os
         os.system("sudo systemctl stop minecraftpeserver.service")
-schedule.every().day.at("15:37").do(stop)
+
+stop()
+# schedule.every().day.at("15:37").do(stop)
 
 # schedule.every().day.at("15:08").do(report)
-while True:
-    schedule.run_pending()
-time.sleep(1)
+# while True:
+#     schedule.run_pending()
+# time.sleep(1)
