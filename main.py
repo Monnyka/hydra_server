@@ -24,7 +24,7 @@ def report():
     #report_title=report_movie+report_tv + report_spacing
     telegram_bot_sendtext(report_movie)
 
-schedule.every().day.at("12:22").do(report)
+schedule.every().day.at("12:38").do(report)
 while True:
     schedule.run_pending()
 time.sleep(1)
