@@ -24,7 +24,7 @@ def stop():
         os.system("sudo systemctl stop minecraftpeserver.service")
 schedule.every().day.at("15:35").do(stop)
 
-schedule.every().day.at("15:08").do(report)
+# schedule.every().day.at("15:08").do(report)
 while True:
     schedule.run_pending()
 time.sleep(1)
